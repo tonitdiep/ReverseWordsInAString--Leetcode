@@ -17,5 +17,33 @@ Output: "s'teL ekat edoCteeL tsetnoc"
 //preserve whitespace and initial word order
 var reverseWords = function(s) {
 
-  
+console.log('lin8', s)
+    const reverse = function(s){
+    
+        s = s.split("");
+
+        let start = 0;
+        let end = s.length;
+
+        while(start < end){
+          //this works 
+            // let temp = s[start];
+            // s[start] = s[end];
+            // s[end] = temp;
+            //this also works
+            [s[start], s[end]] =  [s[end], s[start]]
+
+            start+=1;
+            end-=1;
+        }
+        return s.join("");
+    }
+    s = s.split(" ");
+    for(let i=0; i<s.length; i+=1){
+        s[i] = reverse(s[i]);
+    }
+    return s.join(" ");
+
+
+
 }
